@@ -37,3 +37,7 @@ body {
   background-color: var(--bg-color);
   color: var(--fg-color);
 }
+
+/* a {
+  all: unset;
+} */

@@ -1,0 +1,39 @@
+:root {
+  --bg-color: #f1f5f9;
+  --fg-color: #040409;
+
+  --input-field-card-bg-color: #ffffff;
+
+  --input-field-bg-color: #f1f5f9;
+  --input-field-bg-hover-color: #f1f5f9ae;
+  --input-field-fg-color: #040409;
+  --input-field-default-color: #404040;
+
+  --clear-resume-fg-color: rgb(240, 18, 18);
+
+  --header-bg-color: #0e374ee8;
+  --header-fg-color: #f1f5f9;
+
+  --footer-bg-color: #0e374ee8;
+  --footer-fg-color: #f1f5f9;
+
+  --icon-bg-bcolor: #23c4d6aa;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}

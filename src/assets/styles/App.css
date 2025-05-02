@@ -1,0 +1,26 @@
+@import url(meta.css);
+
+#root {
+  height: auto;
+  min-height: 100vh;
+}
+
+.github.icon {
+  border-radius: 20px;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../images/github.svg');
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(195, 50, 50);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+
+.github.icon:hover {
+  opacity: 0.7;
+  transform: translateY(-0.1rem);
+}

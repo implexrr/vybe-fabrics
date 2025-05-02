@@ -2,14 +2,14 @@
 
 import { createRoutesFromElements, Route } from "react-router-dom";
 
-import MainLayout from "./layouts/MainLayout";
-import About from "./pages/About"
-import Careers from "./pages/Careers";
-import Cart from "./pages/Cart"
-import Contact from "./pages/Contact";
-import ErrorPage from "./pages/Error";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
+import MainLayout from "../../layouts/MainLayout";
+import About from "../../pages/About"
+import Careers from "../../pages/Careers";
+import Cart from "../../pages/Cart"
+import Contact from "../../pages/Contact";
+import ErrorPage from "../../pages/Error";
+import Home from "../../pages/Home";
+import Products from "../../pages/Products";
 
 const routes = createRoutesFromElements(
   <Route element={<MainLayout />}  path="/">

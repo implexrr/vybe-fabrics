@@ -1,4 +1,4 @@
-// App.jsx
+// App.tsx
 
 import { useState } from "react";
 

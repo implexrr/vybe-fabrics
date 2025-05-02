@@ -1,12 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './App.tsx'
-import './index.css'
+import routes from './routes.tsx'
 
+const rootElement = document.getElementById("root");
 
-createRoot(document.getElementById('root')!).render(
+if (!rootElement) {
+  throw new Error("Failed to find the root element");
+}
+
+const router = createBrowserRouter(routes);
+
+createRoot(rootElement).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <RouterProvider router={router} />
+  </StrictMode>
+);

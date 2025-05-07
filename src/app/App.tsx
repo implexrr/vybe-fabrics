@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from "react";
-
-import "../assets/styles/App.css"
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import fetchProducts from "../utils/fetchProducts.ts";
+import "../assets/styles/App.css"
+import sanitizeFetch from "../utils/sanitizeFetch.ts";
 import routes from './routes/routes.tsx'
 
 const router = createBrowserRouter(routes);
@@ -22,13 +22,19 @@ export const App = () => {
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-
   const addToCart = () => {
     // TDL
   };
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    // TDL IMPORTANT: Refactor this into loadProducts (this file) and fetch products (another file) and sanitize products (another file), there's too much going on here
+    // fetch->sanitize->load?
+    // loadProducts
+    const loadProducts = async () => {
+      
+    }
+
+    const oldFetchProductsTDLDelLater = async () => {
       const cached = localStorage.getItem('products');
       if (cached) {
         console.log('products already fetched, getting products from localStorage')
@@ -55,7 +61,7 @@ export const App = () => {
         setLoading(false);
       }
     };
-    fetchProducts();
+    oldFetchProductsTDLDelLater();
   }, []);
 
   return (

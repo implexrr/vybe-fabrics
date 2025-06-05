@@ -6,7 +6,7 @@ import sanitizeFetch from "../utils/sanitizeFetch.ts";
 import "../assets/styles/App.css"
 import { ShopContext } from "./context/ShopContext.tsx";
 import routes from './routes/routes.tsx'
-import { SanitizedItems } from "./types/types.ts";
+import { CartItems, SanitizedItems } from "./types/types.ts";
 
 const router = createBrowserRouter(routes);
 
@@ -15,7 +15,7 @@ export const App = () => {
   const [products, setProducts] = useState<SanitizedItems>([]);
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState(true);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartItems>([]);
   const addToCart = () => {
     // TDL
   };

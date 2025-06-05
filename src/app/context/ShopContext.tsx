@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-import { SanitizedItems } from "../types/types";
+import { CartItems, SanitizedItems } from "../types/types";
 
 interface ShopContextType {
   addToCart: () => void;
-  cartItems: any[];
+  cartItems: CartItems;
   error: null | string;
   loading: boolean;
   products: SanitizedItems;

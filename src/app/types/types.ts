@@ -1,4 +1,13 @@
-// TDL
+interface CartItem {
+  description: string,
+  featuredImage: FeaturedImage
+  id: string
+  price: Price,
+  quantity: number,
+  title: string
+}
+
+type CartItems = CartItem[]
 
 interface FeaturedImage {
   id: string,
@@ -21,7 +30,7 @@ interface Node {
 }
 
 interface Price {
-  amount: string,
+  amount: number,
   currencyCode: string
 }
 
@@ -43,4 +52,4 @@ interface Variant {
   }[]
 }
 
-export type { FetchedItems, SanitizedItem, SanitizedItems }
+export type { CartItems, FetchedItems, SanitizedItem, SanitizedItems }

@@ -1,10 +1,5 @@
-interface CartItem {
-  description: string,
-  featuredImage: FeaturedImage
-  id: string
-  price: Price,
-  quantity: number,
-  title: string
+interface CartItem extends SanitizedItem {
+  quantity: number;
 }
 
 type CartItems = CartItem[]

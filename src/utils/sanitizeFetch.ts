@@ -1,45 +1,4 @@
-interface FeaturedImage {
-  id: string,
-  url: string
-}
-
-
-interface FetchedItem {
-  node : Node
-}
-
-type FetchedItems = FetchedItem[];
-
-interface Node {
-  description: string,
-  featuredImage: FeaturedImage,
-  id: string,
-  title: string,
-  variants: Variant,
-}
-
-interface Price {
-  amount: string,
-  currencyCode: string
-}
-
-interface SanitizedItem {
-  description: string,
-  featuredImage: FeaturedImage
-  id: string
-  price: Price,
-  title: string
-}
-
-type SanitizedItems = SanitizedItem[]
-
-interface Variant {
-  edges: {
-    node: {
-      price: Price
-    }
-  }[]
-}
+import { FetchedItems, SanitizedItem, SanitizedItems } from "../app/types/types";
 
 const sanitizeFetch = (fetchedItems : FetchedItems) => {
   const sanitizedItems : SanitizedItems = new Array(fetchedItems.length);
@@ -56,6 +15,7 @@ const sanitizeFetch = (fetchedItems : FetchedItems) => {
     sanitizedItem.featuredImage = fetchedItems[i].node.featuredImage;
     sanitizedItem.price = fetchedItems[i].node.variants.edges[0]?.node.price;
     sanitizedItem.title = fetchedItems[i].node.title;
+    sanitizedItems[i] = sanitizedItem;
   }
   return sanitizedItems;
 }

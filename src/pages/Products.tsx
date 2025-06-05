@@ -1,11 +1,11 @@
 import { useContext } from "react";
 
-import { ShopContext } from "../app/App";
+import { ShopContext } from "../app/context/ShopContext";
 
 const Products = () => {
-  console.log('loading products from shop context... here they are:')
+  console.log('loading products from shop context... here they are:');
   const { products } = useContext(ShopContext);
-  console.log(products)
+  console.log(products);
   return (
     <div>Products</div>
   )

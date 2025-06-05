@@ -4,7 +4,7 @@ const fetchProducts = async () => {
     const request = await fetch(endpoint, { mode: 'cors' });
     if (request.status >= 400) throw new Error("server error");
     const response = await request.json();
-    return response;
+    return response.data.products.edges;
   }
   catch (err) {
     if (err instanceof Error) throw new Error(err.message);

@@ -10,7 +10,7 @@ const ErrorPage = () => {
       <p className="errorText">
         Maybe it was a secret collab. Maybe it never existed. Either way, you're not getting it now.
       </p>
-      <Link className="home" to="home">Back to reality</Link>
+      <Link className="home" to="/">Back to reality</Link>
     </section>
   );
 };

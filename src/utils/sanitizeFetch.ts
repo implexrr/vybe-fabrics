@@ -1,6 +1,9 @@
 import { FetchedItems, SanitizedItem, SanitizedItems } from "../app/types/types";
 
+// "Sanitizes" fetched items by extracting only the useful components of the fetched data
 const sanitizeFetch = (fetchedItems : FetchedItems) => {
+  // fetchedItems array is transformed into sanitizedItems array by creating a storage array of the same size,
+  // then having each sanitizedItem only extract useful fetchedItem properties
   const sanitizedItems : SanitizedItems = new Array(fetchedItems.length);
   for (let i = 0; i < fetchedItems.length; i += 1) {
     const sanitizedItem : SanitizedItem  = {

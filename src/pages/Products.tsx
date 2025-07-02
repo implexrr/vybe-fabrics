@@ -5,8 +5,8 @@ import { ShopContext } from "../app/context/ShopContext";
 const Products = () => {
   console.log('loading products from shop context... here they are:');
   const { addToCart, cartItems, products } = useContext(ShopContext);
-  // console.log(products);
-  // addToCart();
+  console.log(products);
+  console.log(cartItems);
   return (
     <button onClick={() => {
       addToCart(products[0]);
@@ -16,4 +16,3 @@ const Products = () => {
 }
 
 export default Products
-// TDL

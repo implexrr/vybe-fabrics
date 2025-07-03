@@ -8,11 +8,20 @@ const Products = () => {
   console.log(products);
   console.log(cartItems);
   return (
-    <button onClick={() => {
-      addToCart(products[0]);
-      console.log(cartItems);
-    }}>Products</button>
+    <div className="productCardsContainer">
+      {
+        products.map((product) => {
+          return (
+            <div className="productCard" id={product.id} key={product.id}>
+              <div className="featuredImageContainer">
+                <img src={product.featuredImage.url}/>
+              </div> 
+              <div className="price">{product.price.amount} {product.price.currencyCode}</div>
+            </div>
+          )
+        })
+      }
+    </div>
   )
 }
-
 export default Products

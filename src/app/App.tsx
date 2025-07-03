@@ -60,6 +60,7 @@ export const App = () => {
     loadProducts();
   }, []);
 
+  // TDL: Comment this part
   return (
     <ShopContext.Provider value={{ addToCart, cartItems, error, loading, products }}>
       <RouterProvider router={router} />

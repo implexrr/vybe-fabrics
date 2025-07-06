@@ -34,7 +34,7 @@ const ProductCard = ({ product }: ProductProps) => {
       <button
         className="addToCart"
         onClick={() => {
-          addToCart(product);
+          addToCart(product, quantity);
         }}
       >
         Add to cart

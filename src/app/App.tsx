@@ -18,11 +18,11 @@ export const App = () => {
   const [cartItems, setCartItems] = useState<CartItems>([]);
 
   // Takes a SanitizedItem and adds it to the cart in the form of CartItem, which extends SanitizedItem by giving it a quantity property.
-  const addToCart = (product : SanitizedItem) => {
-    // Checks if item already exists in cart. If it does, just update the item quantity. If not, alters the cart so that the item is added w/ quantity 1.
+  const addToCart = (product : SanitizedItem, amount: number) => {
+    // Checks if item already exists in cart. If it does, just update the item quantity. If not, alters the cart so that the item is added w/quantity 1.
     const itemExistsInCart = cartItems.some(item => item.id === product.id);
     if (itemExistsInCart) {
-      setCartItems(cartItems.map(item => item.id === product.id ? {...item, quantity : item.quantity + 1} : item))
+      setCartItems(cartItems.map(item => item.id === product.id ? {...item, quantity : item.quantity + amount} : item))
     }
     else {
       setCartItems([...cartItems, {...product, quantity : 1}])
@@ -60,7 +60,6 @@ export const App = () => {
     loadProducts();
   }, []);
 
-  // TDL: Comment this part
   return (
     <ShopContext.Provider value={{ addToCart, cartItems, error, loading, products }}>
       <RouterProvider router={router} />

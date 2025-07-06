@@ -4,7 +4,7 @@ import { CartItems, SanitizedItem, SanitizedItems } from "../types/types";
 
 // Type for shop context
 interface ShopContextType {
-  addToCart: (product: SanitizedItem) => void;
+  addToCart: (product: SanitizedItem, amount: number) => void;
   cartItems: CartItems;
   error: null | string;
   loading: boolean;

@@ -1,11 +1,12 @@
 import { createContext } from "react";
 
-import { CartItems, SanitizedItem, SanitizedItems } from "../types/types";
+import { CartItem, CartItems, SanitizedItem, SanitizedItems } from "../types/types";
 
 // Type for shop context
 interface ShopContextType {
   addToCart: (product: SanitizedItem, amount: number) => void;
   cartItems: CartItems;
+  changeCartQuantity: (cartItem: CartItem, amount: number) => void;
   error: null | string;
   loading: boolean;
   products: SanitizedItems;
@@ -15,6 +16,7 @@ interface ShopContextType {
 const defaultShopContext: ShopContextType = {
   addToCart: () => {},
   cartItems: [],
+  changeCartQuantity: () => {},
   error: null, // Nothing is loaded by default, so no error is encountered when context is initially created
   loading: true, // Load isn't finished by default, so this is set to true
   products: []

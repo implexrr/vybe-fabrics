@@ -6,7 +6,7 @@ import sanitizeFetch from "../utils/sanitizeFetch.ts";
 import "../assets/styles/App.css"
 import { ShopContext } from "./context/ShopContext.tsx";
 import routes from './routes/routes.tsx'
-import { CartItems, SanitizedItem, SanitizedItems } from "./types/types.ts";
+import { CartItem, CartItems, SanitizedItem, SanitizedItems } from "./types/types.ts";
 
 const router = createBrowserRouter(routes);
 
@@ -28,6 +28,16 @@ export const App = () => {
       setCartItems([...cartItems, {...product, quantity : amount}])
     }
   };
+
+  // No need to check for cartItem existence, as this will only be called on cartItems that already exist
+  const changeCartQuantity = (cartItem : CartItem, amount: number) => {
+    if (cartItem.quantity - amount < 1) {
+      setCartItems(cartItems.filter(item => item.id != cartItem.id));
+    }
+    else {
+      setCartItems(cartItems.map(item => item.id === cartItem.id ? {...item, quantity : item.quantity + amount} : item))
+    }
+  }
 
   // Product loading needs to be wrapped in useEffect so that it doesn't constantly get called on every component render
   useEffect(() => {
@@ -61,7 +71,7 @@ export const App = () => {
   }, []);
 
   return (
-    <ShopContext.Provider value={{ addToCart, cartItems, error, loading, products }}>
+    <ShopContext.Provider value={{ addToCart, cartItems, changeCartQuantity, error, loading, products }}>
       <RouterProvider router={router} />
     </ShopContext.Provider>
   );

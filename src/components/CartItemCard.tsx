@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { ShopContext } from "../app/context/ShopContext";
 import { CartItem } from "../app/types/types";
+import CartItemQuantitySlice from "./CartItemQuantitySlice";
 
 type CartItemProps = {
   cartItem: CartItem;
@@ -9,11 +10,17 @@ type CartItemProps = {
 
 const CartItemCard = ({ cartItem } : CartItemProps) => {
   const { changeCartQuantity } = useContext(ShopContext);
-  // Need increment/decrement fxns to change cart item quantity
-  // fxns should link to cartItems in ShopContext since incr/decr instantly changes CartItems
-    // User should not be allowed to go below quantity 1
-
-  // Need delete btn to remove item from cartItems in ShopContext.
+  const incrementCartItemQuantity = () => {
+    changeCartQuantity(cartItem, 1);
+  }
+  const decrementCartItemQuantity = () => {
+    if (cartItem.quantity > 1) {
+      changeCartQuantity(cartItem, -1);
+    }
+  }
+  const deleteCartItem = () => {
+    changeCartQuantity(cartItem, -cartItem.quantity)
+  }
 
   return (
     <div className="cartItemCard" id={cartItem.id}>
@@ -23,6 +30,12 @@ const CartItemCard = ({ cartItem } : CartItemProps) => {
       <div className="price">
         {cartItem.price.amount * cartItem.quantity} {cartItem.price.currencyCode}
       </div>
+      <CartItemQuantitySlice
+        cartItem={cartItem}
+        decrementCartItemQuantity={decrementCartItemQuantity}
+        deleteCartItem={deleteCartItem}
+        incrementCartItemQuantity={incrementCartItemQuantity}>
+      </CartItemQuantitySlice>
     </div>
   )
 }

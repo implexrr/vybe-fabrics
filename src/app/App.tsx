@@ -31,7 +31,7 @@ export const App = () => {
 
   // No need to check for cartItem existence, as this will only be called on cartItems that already exist
   const changeCartQuantity = (cartItem : CartItem, amount: number) => {
-    if (cartItem.quantity - amount < 1) {
+    if (cartItem.quantity + amount < 1) {
       setCartItems(cartItems.filter(item => item.id != cartItem.id));
     }
     else {

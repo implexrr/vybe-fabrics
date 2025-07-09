@@ -1,3 +1,4 @@
+// Fetches products from the mock shop API
 const fetchProducts = async () => {
   const endpoint = "https://mock.shop/api?query={products(first:%2030){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}}";
   try {

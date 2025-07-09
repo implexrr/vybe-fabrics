@@ -24,3 +24,12 @@
   opacity: 0.7;
   transform: translateY(-0.1rem);
 }
+
+img {
+  border-radius: 20px;
+  width: 15rem;
+  height: 15rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

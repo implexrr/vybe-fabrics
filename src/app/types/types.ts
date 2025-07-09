@@ -47,4 +47,4 @@ interface Variant {
   }[]
 }
 
-export type { CartItems, FetchedItems, SanitizedItem, SanitizedItems }
+export type { CartItem, CartItems, FetchedItems, SanitizedItem, SanitizedItems }

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { ShopContext } from "../app/context/ShopContext";
 import { SanitizedItem } from "../app/types/types";
-import QuantitySlice from "../components/QuantitySlice";
+import ProductQuantitySlice from "./ProductQuantitySlice";
 
 type ProductProps = {
   product: SanitizedItem;
@@ -10,15 +10,19 @@ type ProductProps = {
 
 const ProductCard = ({ product }: ProductProps) => {
   const { addToCart } = useContext(ShopContext);
-  const [quantity, setQuantity] = useState(1);
-  const incrementQuantity = () => {
-    setQuantity((quantity) => quantity + 1);
+  const [productQuantity, setProductQuantity] = useState(1);
+
+  // No need to link incr/decr quantity to ShopContext since this doesn't change product props or cart items, 
+  // just the amt that user will add to cart items on click. Actual "linking" to ShopContext is done via addToCart
+  const incrementProductQuantity = () => {
+    setProductQuantity((productQuantity) => productQuantity + 1);
   };
-  const decrementQuantity = () => {
-    setQuantity((quantity) => Math.max(1, quantity - 1));
+  const decrementProductQuantity = () => {
+    setProductQuantity((productQuantity) => Math.max(1, productQuantity - 1));
   };
 
   return (
+    // TODO: del key here, unnecessary
     <div className="productCard" id={product.id} key={product.id}>
       <div className="featuredImageContainer">
         <img src={product.featuredImage.url} />
@@ -26,15 +30,15 @@ const ProductCard = ({ product }: ProductProps) => {
       <div className="price">
         {product.price.amount} {product.price.currencyCode}
       </div>
-      <QuantitySlice
-        decrementQuantity={decrementQuantity}
-        incrementQuantity={incrementQuantity}
-        quantity={quantity}
-      ></QuantitySlice>
+      <ProductQuantitySlice
+        decrementProductQuantity={decrementProductQuantity}
+        incrementProductQuantity={incrementProductQuantity}
+        productQuantity={productQuantity}
+      ></ProductQuantitySlice>
       <button
         className="addToCart"
         onClick={() => {
-          addToCart(product, quantity);
+          addToCart(product, productQuantity);
         }}
       >
         Add to cart

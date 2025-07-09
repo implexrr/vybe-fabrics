@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import { ShopContext } from "../app/context/ShopContext";
+import CartItemCard from "../components/CartItemCard";
 
 const Cart = () => {
   console.log('loading cart from shop context... here it is:');

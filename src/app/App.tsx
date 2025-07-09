@@ -25,7 +25,7 @@ export const App = () => {
       setCartItems(cartItems.map(item => item.id === product.id ? {...item, quantity : item.quantity + amount} : item))
     }
     else {
-      setCartItems([...cartItems, {...product, quantity : 1}]) // TODO: Bug here, what if initial quantity added >= 1?
+      setCartItems([...cartItems, {...product, quantity : amount}])
     }
   };
 

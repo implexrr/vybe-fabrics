@@ -22,8 +22,7 @@ const ProductCard = ({ product }: ProductProps) => {
   };
 
   return (
-    // TODO: del key here, unnecessary
-    <div className="productCard" id={product.id} key={product.id}>
+    <div className="productCard" id={product.id}>
       <div className="featuredImageContainer">
         <img src={product.featuredImage.url} />
       </div>

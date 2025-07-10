@@ -5,6 +5,9 @@ import CartItemCard from "../components/CartItemCard";
 
 const TAX = 0.13;
 
+// TODO: Refactor into cartItemCards component
+// TODO: Refactor into cartItemTotals component
+  // TODO: Refactor into cartItemPriceSlices component
 const Cart = () => {
   const { cartItems } = useContext(ShopContext);
   return (

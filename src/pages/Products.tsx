@@ -1,20 +1,10 @@
-import { useContext } from "react";
-
-import { ShopContext } from "../app/context/ShopContext";
-import ProductCard from "../components/ProductCard";
+import ProductCards from "../components/ProductCards";
 
 // TODO: refactor into productCards component
 const Products = () => {
-  const { products } = useContext(ShopContext);
   return (
-    <div className="productCards">
-      {
-        products.map((product) => {
-          return (
-            <ProductCard key={product.id} product={product}></ProductCard>
-          )
-        })
-      }
+    <div className="productCardsContainer">
+      <ProductCards></ProductCards>
     </div>
   )
 }

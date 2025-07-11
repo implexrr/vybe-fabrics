@@ -6,16 +6,16 @@ const CartItemPriceSlices = () => {
   const { cartItems } = useContext(ShopContext);
   return (
     <div className="cartItemPriceSlices">
-      {
-        cartItems.map((cartItem) => {
-          return (
-            <div className="cartItemPriceSlice">
-              <p>{cartItem.title} x {cartItem.quantity}</p>
-              <p>${cartItem.quantity * cartItem.price.amount}</p>
-            </div>
-          )
-        })
-      }
+      {/* Render a price summary line for each item in the cart */}
+      {cartItems.map((cartItem) => (
+        <div className="cartItemPriceSlice" key={cartItem.id}>
+          {/* Item title and quantity */}
+          <p>{cartItem.title} x {cartItem.quantity}</p>
+
+          {/* Total price for this item (quantity * unit price) */}
+          <p>${cartItem.quantity * cartItem.price.amount}</p>
+        </div>
+      ))}
     </div>
   )
 }

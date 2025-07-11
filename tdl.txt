@@ -1,0 +1,5 @@
+// TODO: Cart Symbol fxnality
+// TODO: HTML for auxillary pages
+// TODO: Site-wide CSS
+// TODO: CSS for product page
+// TODO: CSS for cart page

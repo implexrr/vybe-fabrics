@@ -1,4 +1,4 @@
-import { CartItem } from "../app/types/types";
+import { CartItem } from "../../app/types/types";
 
 type CartItemQuantityProps = {
   cartItem: CartItem;

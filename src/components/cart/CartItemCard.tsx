@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
-import { ShopContext } from "../app/context/ShopContext";
-import { CartItem } from "../app/types/types";
+import { ShopContext } from "../../app/context/ShopContext";
+import { CartItem } from "../../app/types/types";
 import CartItemQuantitySlice from "./CartItemQuantitySlice";
 
 type CartItemProps = {

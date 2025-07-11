@@ -5,7 +5,6 @@ type CartItemTotalProps = {
   displayErrorMsg: () => void;
 };
 
-// TODO: Sectionize divs
 const CartItemTotals = ({ displayErrorMsg } : CartItemTotalProps) => {
   return (
     <div className="cartItemTotals">

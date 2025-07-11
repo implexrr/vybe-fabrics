@@ -1,4 +1,4 @@
-import ProductCards from "../components/ProductCards";
+import ProductCards from "../components/product/ProductCards";
 
 const Products = () => {
   return (

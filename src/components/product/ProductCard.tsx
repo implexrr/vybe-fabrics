@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
-import { ShopContext } from "../app/context/ShopContext";
-import { SanitizedItem } from "../app/types/types";
+import { ShopContext } from "../../app/context/ShopContext";
+import { SanitizedItem } from "../../app/types/types";
 import ProductQuantitySlice from "./ProductQuantitySlice";
 
 type ProductProps = {

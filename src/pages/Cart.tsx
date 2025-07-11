@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useContext } from "react";
 
 import { ShopContext } from "../app/context/ShopContext";
-import CartItemCards from "../components/CartItemCards";
-import CartItemTotals from "../components/CartItemTotals";
+import CartItemCards from "../components/cart/CartItemCards";
+import CartItemTotals from "../components/cart/CartItemTotals";
 
 const Cart = () => {
   const [cartError, setCartError] = useState<null | string>(null);

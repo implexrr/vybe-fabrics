@@ -3,7 +3,7 @@ import ProductCards from "../components/ProductCards";
 // TODO: refactor into productCards component
 const Products = () => {
   return (
-    <div className="productCardsContainer">
+    <div className="products page">
       <ProductCards></ProductCards>
     </div>
   )

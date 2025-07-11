@@ -28,7 +28,7 @@ const CartItemCard = ({ cartItem } : CartItemProps) => {
         <img src={cartItem.featuredImage.url} />
       </div>
       <div className="price">
-        ${cartItem.price.amount * cartItem.quantity} {cartItem.price.currencyCode}
+        $ {cartItem.price.amount * cartItem.quantity} {cartItem.price.currencyCode}
       </div>
       <CartItemQuantitySlice
         cartItem={cartItem}

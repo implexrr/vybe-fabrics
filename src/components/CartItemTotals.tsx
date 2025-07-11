@@ -21,16 +21,16 @@ const CartItemTotals = () => {
         }
       </div>
       <div className="cartSubtotalSlice">
-        <p>{cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)}</p>
+        <p>$ {cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)}</p>
       </div>
       <div className="cartTaxSlice">
-        <p>{(TAX * cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)).toFixed(2)}</p>
+        <p>$ {(TAX * cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)).toFixed(2)}</p>
       </div>
       <div className="cartShippingSlice">
         <p>FREE</p>
       </div>
       <div className="cartTotalSlice">
-        <p>{((1 + TAX) * cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)).toFixed(2)}</p>
+        <p>$ {((1 + TAX) * cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)).toFixed(2)}</p>
       </div>
       <div className="cartCheckoutButtonContainer">
         <button onClick={() => {window.alert('nah b')}}>Checkout</button>

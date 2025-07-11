@@ -1,27 +1,18 @@
 import { useContext } from "react";
 
 import { ShopContext } from "../app/context/ShopContext";
-import CartItemCard from "../components/CartItemCard";
+import CartItemCards from "../components/CartItemCards";
 
 const TAX = 0.13;
 
 // TODO: Refactor into cartItemCards component
 // TODO: Refactor into cartItemTotals component
   // TODO: Refactor into cartItemPriceSlices component
-// TODO: Give checkout button troll fxn
 const Cart = () => {
   const { cartItems } = useContext(ShopContext);
   return (
     <>
-      <div className="cartItemCards">
-        {
-          cartItems.map((cartItem) => {
-            return (
-              <CartItemCard cartItem={cartItem} key={cartItem.id}></CartItemCard>
-            )
-          })
-        }
-      </div>
+      <CartItemCards></CartItemCards>
       <div className="cartItemTotals">
         <div className="cartItemPriceSlices">
           {

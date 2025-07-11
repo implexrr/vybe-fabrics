@@ -1,15 +1,18 @@
 import CalculationCard from "./CalculationCard";
 import CartItemPriceSlices from "./CartItemPriceSlices";
 
-// TODO: Button that acc does something
+type CartItemTotalProps = {
+  displayErrorMsg: () => void;
+};
+
 // TODO: Sectionize divs
-const CartItemTotals = () => {
+const CartItemTotals = ({ displayErrorMsg } : CartItemTotalProps) => {
   return (
     <div className="cartItemTotals">
       <CartItemPriceSlices></CartItemPriceSlices>
       <CalculationCard></CalculationCard>
       <div className="cartCheckoutButtonContainer">
-        <button onClick={() => {window.alert('nah b')}}>Checkout</button>
+        <button onClick={displayErrorMsg}>Checkout</button>
       </div>
     </div>
   )

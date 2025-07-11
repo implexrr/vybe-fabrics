@@ -8,7 +8,7 @@ const TAX = 0.13;
 // TODO: Refactor into cartItemCards component
 // TODO: Refactor into cartItemTotals component
   // TODO: Refactor into cartItemPriceSlices component
-//TODO: Give checkout button troll fxn
+// TODO: Give checkout button troll fxn
 const Cart = () => {
   const { cartItems } = useContext(ShopContext);
   return (
@@ -48,7 +48,7 @@ const Cart = () => {
           <p>{(1 + TAX) * cartItems.reduce((total, curItem) => total + curItem.quantity * curItem.price.amount, 0)}</p>
         </div>
         <div className="cartCheckoutButtonContainer">
-          <button>Checkout</button>
+          <button onClick={() => {window.alert('nah b')}}>Checkout</button>
         </div>
       </div>
     </>
